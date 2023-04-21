@@ -3,27 +3,8 @@
 </template>
 
 <script setup lang="ts">
-import LinkifyIt from 'linkify-it';
-import tlds from 'tlds';
-
-const linkifyIt = new LinkifyIt();
-linkifyIt.tlds(tlds);
-
-function linkify(message: string): string {
-  let m = message;
-  const results = linkifyIt.match(m) || [];
-
-  results.forEach((result: LinkifyIt.Match) => {
-    const { text, url } = result;
-    m = m.replace(text, `<a href="${url}">${text}</a>`);
-  });
-
-  return m;
-}
-
-function insertBreak(message: string): string {
-  return message.replace(/\r?\n/g, '<br>');
-}
+import {marked} from 'marked';
+import sanitizeHtml from 'sanitize-html';
 
 const props = defineProps({
   message: {
@@ -32,11 +13,19 @@ const props = defineProps({
   }
 });
 
+const sanitizeOptions: sanitizeHtml.IOptions = {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat(['del'])
+};
+
+const markedOptions: marked.MarkedOptions = {
+  gfm: true
+};
+
 const body = computed<string>(() => {
-  let message = props.message;
-  message = insertBreak(message);
-  message = linkify(message);
-  return message;
+  const html = marked.parse(props.message, markedOptions);
+  const sanitized = sanitizeHtml(html, sanitizeOptions);
+
+  return sanitized;
 });
 </script>
 
