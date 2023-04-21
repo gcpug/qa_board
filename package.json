@@ -1,0 +1,48 @@
+{
+  "name": "qa_board",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Q&A system",
+  "engine": {
+    "node": "18",
+    "npm": "9"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "nuxi dev --spa",
+    "build": "nuxi generate --spa",
+    "prettier": "prettier --write \"src/**/*.{js,ts,vue}\"",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcpug/qa_board.git"
+  },
+  "author": "sinmetal",
+  "bugs": {
+    "url": "https://github.com/gcpug/qa_board/issues"
+  },
+  "homepage": "https://github.com/gcpug/qa_board#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.8",
+    "@types/linkify-it": "^3.0.0",
+    "firebase": "^9.19.1",
+    "linkify-it": "^4.0.1",
+    "nuxt": "^3.4.1",
+    "pinia": "^2.0.34",
+    "tlds": "^1.238.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7"
+  },
+  "overrides": {
+    "vue": "latest"
+  }
+}

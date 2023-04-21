@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    match /users/{userId} {
+      allow create, delete, update: if request.auth.uid == userId && request.auth.token.email.matches('.*@mercari[.]com');
+    }
+    match /events/{event} {
+      allow read, write: if request.auth.uid != null && request.auth.token.email.matches('.*@mercari[.]com');
+    }
+    match /messages/{message} {
+      allow create: if request.auth.uid != null && request.auth.token.email.matches('.*@mercari[.]com');
+      allow update: if request.auth.uid != null && request.auth.token.email.matches('.*@mercari[.]com') || request.auth.uid == resource.data.author_uid;
+      allow read: if request.auth.uid != null && request.auth.token.email.matches('.*@mercari[.]com');
+    }
+    match /reactions/{reaction} {
+      allow create, read, write: if request.auth.uid != null && request.auth.token.email.matches('.*@mercari[.]com');
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.emoji-dropdown.dropdown-content {
+  min-width: 50px;
+}
+
+.emoji-dropdown.dropdown-content li {
+  text-align: center;
+}
