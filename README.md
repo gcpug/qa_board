@@ -30,34 +30,34 @@ NUXT_APP_ID=<appId>
 
 | field | type | description |
 |---|---|---|
-| authorId | `string` | `uid` of the event author obtained from login information |
-| createdAt | `string` | |
-| displayName | `string` | |
-| email | `string` | email address obtained from login information |
-| eventName | `string` | |
-| photoURL | `string` | avatar URL obtained from login information |
+| authorId | `string` | `uid` of event author obtained from login information |
+| createdAt | `string` | created datetime of event |
+| displayName | `string` | display name of person who created the event |
+| email | `string` | email address of event author |
+| eventName | `string` | display name of event |
+| photoURL | `string` | avatar URL of event author |
 
 ### messages
 
 | field | type | description |
 |---|---|---|
-| authorId | `string` | `uid` of the event author obtained from login information |
-| createdAt | `string` | |
-| displayName | `string` | |
-| done | `boolean` | |
-| email | `string` | |
-| eventId | `string` | |
-| message | `string` | |
-| photoURL | `string` | |
-| to | `string` | associated message id |
+| authorId | `string` | `uid` of the message author obtained from login information |
+| createdAt | `string` | created datetime of message |
+| displayName | `string` | display name of message author |
+| done | `boolean` | flag to detect if message is answered |
+| email | `string` | email address of message author |
+| eventId | `string` | associated event id |
+| message | `string` | message content |
+| photoURL | `string` | avatar URL of message author |
+| to | `string` | parent message id associated to this message |
 
 ### reactions
 
 | field | type | description |
 |---|---|---|
-| authorDisplayName |`string` | |
+| authorDisplayName |`string` | display name of reaction author |
 | authorId | `string` | `uid` of the reaction author obtained from login information |
-| createdAt | `string` | |
-| eventId | `string` | |
-| message | `string` | |
+| createdAt | `string` | created datetime of reaction |
+| eventId | `string` | associated event id |
+| messageId | `string` | associated message id |
 | reaction | `string` | equiv string of each emoji (`+1`, `eyes`, `heart`, `joy`) |
