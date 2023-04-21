@@ -1,7 +1,7 @@
 {
   "name": "qa_board",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Q&A system",
   "engine": {
     "node": "18",
