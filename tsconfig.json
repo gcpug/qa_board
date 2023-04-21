@@ -4,21 +4,16 @@
     "target": "es2022",
     "lib": ["es2022", "dom"],
     "module": "es2022",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
+    "moduleResolution": "node16",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
     "removeComments": true,
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
-    },
-    "types": ["@nuxt/vue-app", "@types/node", "@types/jest"]
+    }
   },
   "exclude": ["node_modules"]
 }
