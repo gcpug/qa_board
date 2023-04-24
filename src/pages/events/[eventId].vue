@@ -33,3 +33,15 @@ await eventStore.fetchEvent({eventId});
 await eventStore.fetchMessages({eventId});
 await reactionsStore.fetchReactions({eventId});
 </script>
+
+<style scoped>
+.container {
+  width: 90%;
+}
+
+@media (601px <= width) {
+  .container {
+    width: 85%;
+  }
+}
+</style>

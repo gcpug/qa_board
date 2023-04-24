@@ -18,3 +18,15 @@ const eventsStore = useEventsStore();
 eventsStore.setup(authStore.firestore);
 await eventsStore.fetchEvents();
 </script>
+
+<style scoped>
+.container {
+  width: 90%;
+}
+
+@media (601px <= width) {
+  .container {
+    width: 85%;
+  }
+}
+</style>
