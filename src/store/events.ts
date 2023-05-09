@@ -50,8 +50,10 @@ export const useEventsStore = defineStore('events', {
             id: doc.id,
             authorId: data.authorId,
             displayName: data.displayName,
+            email: data.email,
             eventName: data.eventName,
-            photoURL: data.photoURL
+            photoURL: data.photoURL,
+            createdAt: data.createdAt.seconds * 1000
           };
         });
       });
