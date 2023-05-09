@@ -31,7 +31,8 @@
 <script setup lang="ts">
 import {useAuthStore} from '~/store/auth';
 import {useReactionsStore} from '~/store/reactions';
-import Reaction, {emojiMapping} from '~/types/reaction';
+import type Reaction from '~/types/reaction';
+import {emojiMapping} from '~/types/reaction';
 
 const authStore = useAuthStore();
 const reactionsStore = useReactionsStore();

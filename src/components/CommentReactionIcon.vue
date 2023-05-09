@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import Reaction from '~/types/reaction';
+import type Reaction from '~/types/reaction';
 
 const props = defineProps({
   pressed: {
