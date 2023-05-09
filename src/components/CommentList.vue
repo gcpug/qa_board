@@ -76,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import Message from '~/types/message';
+import type Message from '~/types/message';
 import {useEventStore} from '~/store/event';
 
 const eventStore = useEventStore();
