@@ -4,7 +4,8 @@
 
 <script setup lang="ts">
 import {marked} from 'marked';
-import sanitizeHtml from 'sanitize-html';
+import type {MarkedOptions} from 'marked';
+import * as sanitizeHtml from 'sanitize-html';
 
 const props = defineProps({
   message: {
@@ -17,7 +18,7 @@ const sanitizeOptions: sanitizeHtml.IOptions = {
   allowedTags: sanitizeHtml.defaults.allowedTags.concat(['del'])
 };
 
-const markedOptions: marked.MarkedOptions = {
+const markedOptions: MarkedOptions = {
   gfm: true
 };
 
