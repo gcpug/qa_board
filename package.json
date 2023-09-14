@@ -29,19 +29,18 @@
     }
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.4.8",
-    "firebase": "^9.19.1",
-    "marked": "^4.3.0",
-    "nuxt": "^3.4.1",
-    "pinia": "^2.0.34",
-    "sanitize-html": "^2.10.0"
+    "@pinia/nuxt": "^0.4.11",
+    "firebase": "^10.3.1",
+    "marked": "^9.0.0",
+    "nuxt": "^3.7.3",
+    "pinia": "^2.1.6",
+    "sanitize-html": "^2.11.0"
   },
   "devDependencies": {
-    "@types/marked": "^4.0.8",
     "@types/sanitize-html": "^2.9.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.1",
-    "prettier": "^2.8.7"
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
   },
   "overrides": {
     "vue": "latest"
